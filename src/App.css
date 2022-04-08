@@ -1,0 +1,7 @@
+:root {
+  --font-title: 'Roboto', sans-serif;
+  --font-body: 'Roboto', sans-serif;
+  --color-blue: rgb(0, 132, 197);
+  --color-gray: rgb(108, 108, 108);
+  --color-darkGray: rgb(48, 48, 48);
+}
