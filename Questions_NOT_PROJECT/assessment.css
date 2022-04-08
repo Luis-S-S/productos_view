@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Roboto:wght@300&display=swap');
 
+body {
+  margin: 0;
+}
+
 .c-section {
   align-items: center;
   display: flex;
@@ -13,13 +17,13 @@
   font-family: 'Merriweather', serif;
   padding: .75em 0;
   text-align: center;
-  width: 85%;
+  width: 100%;
 }
 
 .c-services {
   display: grid;
   gap: 3%;
-  grid-template-columns: repeat(2, 41%);
+  grid-template-columns: 1;
   justify-content: center;
   padding: 0;
 }
@@ -37,9 +41,18 @@
 
 .c-services__item > h3 {
   font-family: 'Merriweather', serif;
-  padding-left: 2em; 
+  padding-left: 2em;
 }
 
 .c-services__item > p {
   font-family: 'Roboto', sans-serif;
+}
+
+@media (min-width: 768px) {
+  .c-section__title {
+    width: 85%;
+  }
+  .c-services {
+    grid-template-columns: repeat(2, 41%);
+  }
 }
