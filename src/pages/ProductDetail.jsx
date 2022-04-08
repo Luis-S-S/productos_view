@@ -1,7 +1,8 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { getOneProduct } from '../services/product';
+import ProductCard from '../components/ProductCard';
 
 function ProductDetail() {
   const [product, setProduct] = useState({});
@@ -18,9 +19,8 @@ function ProductDetail() {
   return (
     <div>
       <h1>Product Detail</h1>
-      <p>This route refers to ID: {id}</p>
-      <p>This ID has title: {product.title}</p>
-      <p>This ID has price: {product.price}</p>
+      <ProductCard key={product.id} product={product} />
+      <Link to="/">Back to Home</Link>
     </div>
   );
 }
