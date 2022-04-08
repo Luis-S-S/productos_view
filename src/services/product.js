@@ -10,7 +10,7 @@ async function getAllProducts() {
   }
 }
 
-async function getOneProducts(id) {
+async function getOneProduct(id) {
   try {
     const data = await fetch(`${URL}/products/${id}`);
     const product = await data.json();
@@ -22,5 +22,5 @@ async function getOneProducts(id) {
 
 export {
   getAllProducts,
-  getOneProducts,
+  getOneProduct,
 };
