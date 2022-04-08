@@ -1,0 +1,25 @@
+header {
+  width: 100%;
+  margin-bottom: 2em;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 80px;
+  background-color: var(--color-darkGray);
+  padding: 0 1em;
+}
+
+.header__link {
+  text-decoration: none;
+  color: white;
+  font-family: var(--font-title);
+  font-size: 1.25em;
+  transition: font-size 0.3s ease-in-out;
+}
+
+.header__link:hover {
+  font-size: 1.5em;
+}

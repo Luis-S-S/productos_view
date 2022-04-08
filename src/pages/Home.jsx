@@ -3,6 +3,7 @@ import ProductCard from '../components/ProductCard/ProductCard';
 import { GlobalContext } from '../store';
 import { setAllProducts } from '../store/actions';
 import { fetchAllProducts } from '../services/products';
+import Header from '../components/Header/Header';
 
 function Home() {
   const [loading, setLoading] = useState(true);
@@ -18,12 +19,12 @@ function Home() {
   }, []);
 
   return (
-    <div>
-      <h1>Home</h1>
+    <>
+      <Header />
       {loading ? <div>Loading...</div> : state.allProducts.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}
-    </div>
+    </>
   );
 }
 
