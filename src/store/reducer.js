@@ -1,18 +1,20 @@
+/* eslint-disable default-param-last */
 export const initialState = {
-  loading: true,
+  allProducts: [],
+  oneProduct: {},
 };
 
-export const reducer = (state, action) => {
+export const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'LOADING_FALSE':
+    case 'SET_ALL_PRODUCTS':
       return {
         ...state,
-        loading: false,
+        allProducts: action.payload,
       };
-    case 'LOADING_TRUE':
+    case 'SET_ONE_PRODUCT':
       return {
         ...state,
-        loading: true,
+        oneProduct: action.payload,
       };
     default:
       return null;

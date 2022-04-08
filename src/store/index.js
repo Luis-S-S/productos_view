@@ -1,11 +1,11 @@
 /* eslint-disable react/jsx-no-constructed-context-values */
 import PropTypes from 'prop-types';
-import { useReducer, createContext, useContext } from 'react';
+import { useReducer, createContext } from 'react';
 import { reducer, initialState } from './reducer';
 
-const GlobalContext = createContext();
+export const GlobalContext = createContext();
 
-export function GlobalProvider({ children }) {
+export default function GlobalProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
@@ -18,11 +18,3 @@ export function GlobalProvider({ children }) {
 GlobalProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
-
-export function useGlobalContext() {
-  const context = useContext(GlobalContext);
-  if (!context) {
-    throw new Error('useGlobalContext must be used within a GlobalProvider');
-  }
-  return context;
-}

@@ -1,6 +1,6 @@
 const URL = 'https://fakestoreapi.com';
 
-async function getAllProducts() {
+async function fetchAllProducts() {
   try {
     const data = await fetch(`${URL}/products`);
     const products = await data.json();
@@ -10,7 +10,7 @@ async function getAllProducts() {
   }
 }
 
-async function getOneProduct(id) {
+async function fetchOneProduct(id) {
   try {
     const data = await fetch(`${URL}/products/${id}`);
     const product = await data.json();
@@ -21,6 +21,6 @@ async function getOneProduct(id) {
 }
 
 export {
-  getAllProducts,
-  getOneProduct,
+  fetchAllProducts,
+  fetchOneProduct,
 };

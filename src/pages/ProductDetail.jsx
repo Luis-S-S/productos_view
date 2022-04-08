@@ -1,22 +1,21 @@
 /* eslint-disable react/jsx-one-expression-per-line */
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { getOneProduct } from '../services/product';
+import { fetchOneProduct } from '../services/products';
 import ProductCard from '../components/ProductCard';
-import { useGlobalContext } from '../store';
-import { loadingFalse } from '../store/actions';
-import handlerOnClick from '../services/handlers';
+import { GlobalContext } from '../store';
+import { setOneProduct } from '../store/actions';
 
 function ProductDetail() {
-  const { state, dispatch } = useGlobalContext();
-  const [product, setProduct] = useState({});
+  const [loading, setLoading] = useState(true);
+  const { state, dispatch } = useContext(GlobalContext);
   const { id } = useParams();
 
   useEffect(() => {
-    getOneProduct(id)
-      .then((res) => {
-        dispatch(loadingFalse());
-        setProduct(res);
+    fetchOneProduct(id)
+      .then((product) => {
+        setLoading(false);
+        dispatch(setOneProduct(product));
       })
       .catch((err) => { throw err; });
   }, []);
@@ -24,8 +23,8 @@ function ProductDetail() {
   return (
     <div>
       <h1>Product Detail</h1>
-      {state.loading ? <div>Loading...</div> : <ProductCard product={product} />}
-      <Link to="/" onClick={handlerOnClick}>Back to Home</Link>
+      {loading ? <div>Loading...</div> : <ProductCard product={state.oneProduct} />}
+      <Link to="/">Back to Home</Link>
     </div>
   );
 }

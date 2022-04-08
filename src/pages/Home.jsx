@@ -1,18 +1,18 @@
-import { useState, useEffect } from 'react';
-import { getAllProducts } from '../services/product';
+import { useState, useEffect, useContext } from 'react';
 import ProductCard from '../components/ProductCard';
-import { useGlobalContext } from '../store';
-import { loadingFalse } from '../store/actions';
+import { GlobalContext } from '../store';
+import { setAllProducts } from '../store/actions';
+import { fetchAllProducts } from '../services/products';
 
 function Home() {
-  const { state, dispatch } = useGlobalContext();
-  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const { state, dispatch } = useContext(GlobalContext);
 
   useEffect(() => {
-    getAllProducts()
-      .then((res) => {
-        dispatch(loadingFalse());
-        setProducts(res);
+    fetchAllProducts()
+      .then((products) => {
+        setLoading(false);
+        dispatch(setAllProducts(products));
       })
       .catch((err) => { throw err; });
   }, []);
@@ -20,7 +20,7 @@ function Home() {
   return (
     <div>
       <h1>Home</h1>
-      {state.loading ? <div>Loading...</div> : products.map((product) => (
+      {loading ? <div>Loading...</div> : state.allProducts.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}
     </div>

@@ -1,7 +1,7 @@
-const loadingFalse = () => ({ type: 'LOADING_FALSE' });
-const loadingTrue = () => ({ type: 'LOADING_TRUE' });
+const setAllProducts = (products) => ({ type: 'SET_ALL_PRODUCTS', payload: products });
+const setOneProduct = (product) => ({ type: 'SET_ONE_PRODUCT', payload: product });
 
 export {
-  loadingFalse,
-  loadingTrue,
+  setAllProducts,
+  setOneProduct,
 };
