@@ -1,2 +1,7 @@
-const loading = (data) => ({ type: 'LOADING', payload: data });
-export default loading;
+const loadingFalse = () => ({ type: 'LOADING_FALSE' });
+const loadingTrue = () => ({ type: 'LOADING_TRUE' });
+
+export {
+  loadingFalse,
+  loadingTrue,
+};
