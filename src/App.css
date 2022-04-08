@@ -5,3 +5,7 @@
   --color-gray: rgb(108, 108, 108);
   --color-darkGray: rgb(48, 48, 48);
 }
+
+body {
+  padding-bottom: 3em;
+}

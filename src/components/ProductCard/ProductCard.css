@@ -1,6 +1,6 @@
 .pro-card {
   padding: 1.75em 1.25em;
-  border: 1px solid black;
+  border: 2px solid black;
   border-radius: .25em;
   box-sizing: content-box;
   width: 80%;
@@ -10,6 +10,10 @@
   align-items: center;
   justify-content: center;
   height: 400px;
+}
+
+.pro-card:hover {
+  box-shadow: 0 3px 5px var(--color-darkGray);
 }
 
 .card-container {
