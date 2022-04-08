@@ -2,7 +2,7 @@
 import { useState, useEffect, useContext } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { fetchOneProduct } from '../services/products';
-import ProductCard from '../components/ProductCard';
+import ProductCard from '../components/ProductCard/ProductCard';
 import { GlobalContext } from '../store';
 import { setOneProduct } from '../store/actions';
 

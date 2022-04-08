@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
-import ProductCard from '../components/ProductCard';
+import ProductCard from '../components/ProductCard/ProductCard';
 import { GlobalContext } from '../store';
 import { setAllProducts } from '../store/actions';
 import { fetchAllProducts } from '../services/products';
