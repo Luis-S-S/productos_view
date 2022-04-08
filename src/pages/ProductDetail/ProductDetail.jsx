@@ -2,11 +2,12 @@
 import { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchOneProduct } from '../../services/products';
-import ProductCard from '../../components/ProductCard/ProductCard';
 import { GlobalContext } from '../../store';
 import { setOneProduct } from '../../store/actions';
 import Header from '../../components/Header/Header';
 import Loading from '../../components/Loading/Loading';
+import ProductDetailCard from '../../components/ProductDetailCard/ProductDetailCard';
+// import ProductCard from '../../components/ProductCard/ProductCard';
 
 function ProductDetail() {
   const [loading, setLoading] = useState(true);
@@ -25,7 +26,7 @@ function ProductDetail() {
   return (
     <>
       <Header />
-      {loading ? <Loading /> : <ProductCard product={state.oneProduct} />}
+      {loading ? <Loading /> : <ProductDetailCard product={state.oneProduct} />}
     </>
   );
 }
