@@ -10,4 +10,17 @@ async function getAllProducts() {
   }
 }
 
-export default getAllProducts;
+async function getOneProducts(id) {
+  try {
+    const data = await fetch(`${URL}/products/${id}`);
+    const product = await data.json();
+    return product;
+  } catch (error) {
+    throw new Error(error);
+  }
+}
+
+export {
+  getAllProducts,
+  getOneProducts,
+};
