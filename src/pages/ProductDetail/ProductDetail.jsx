@@ -6,6 +6,7 @@ import ProductCard from '../../components/ProductCard/ProductCard';
 import { GlobalContext } from '../../store';
 import { setOneProduct } from '../../store/actions';
 import Header from '../../components/Header/Header';
+import Loading from '../../components/Loading/Loading';
 
 function ProductDetail() {
   const [loading, setLoading] = useState(true);
@@ -24,7 +25,7 @@ function ProductDetail() {
   return (
     <>
       <Header />
-      {loading ? <div>Loading...</div> : <ProductCard product={state.oneProduct} />}
+      {loading ? <Loading /> : <ProductCard product={state.oneProduct} />}
     </>
   );
 }

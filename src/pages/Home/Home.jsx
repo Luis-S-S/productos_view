@@ -5,6 +5,7 @@ import { setAllProducts } from '../../store/actions';
 import { fetchAllProducts } from '../../services/products';
 import './Home.css';
 import Header from '../../components/Header/Header';
+import Loading from '../../components/Loading/Loading';
 
 function Home() {
   const [loading, setLoading] = useState(true);
@@ -23,7 +24,7 @@ function Home() {
     <>
       <Header />
       <div className="product-card-container">
-        {loading ? <div>Loading...</div> : state.allProducts.map((product) => (
+        {loading ? <Loading /> : state.allProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>

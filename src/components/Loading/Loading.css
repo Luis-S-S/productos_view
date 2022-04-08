@@ -1,0 +1,17 @@
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  text-align: center;
+}
+
+.loading__icon {
+  width: 100px;
+  animation: loading 5s linear infinite;
+}
