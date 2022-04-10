@@ -72,3 +72,8 @@
   color: var(--color-blue);
   border: 1px solid var(--color-blue);
 }
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
