@@ -57,11 +57,11 @@ FOR ENGLISH SPEAKERS PLEASE REFER TO THE END OF THIS README, THANKS!
 
 # MakeItReal Assessment
 
-Se crea aplicación en entorno local con tres páginas (home, product detail y about), en la página home se encuentran la lista total de productos, en product detail se observa solo un producto en más detalle y por último about es información personal.
+Developed a web app locally with three pages (home, product detail, and about), in the home page we find the list of all products, on product detail we observe the specifics of a product, and finally on about you will see some personal information.
 
-En la página home, cada carta de los productos tiene un contador que nos indica la disponibilidad del enlace hacia el detalle del objeto, cuando este llegue a cero el enlace ya no funcionará.
+On the home page, each product card has a timer that tells us the availability of the link to the product detail page. Once it reaches zero the link will not work.
 
-Para ver la aplicación por favor usar el comando `npm start` en la carpeta raíz y dirigirse a [http://localhost:3000](http://localhost:3000)
+To run the application please input `npm start` in the root folder and go to [http://localhost:3000](http://localhost:3000)
 
 I appreciate you for taking your time and watching my project!
 
