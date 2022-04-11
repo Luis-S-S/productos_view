@@ -1,0 +1,68 @@
+@keyframes title {
+  33% {
+    transform: rotate(5deg);
+  }
+  67% {
+    transform: rotate(-5deg);
+  }
+}
+
+.about__container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+
+.about__title {
+  font-family: var(--font-title);
+  font-size: 2.5em;
+  text-decoration: none;
+  color: var(--color-gray);
+  margin-bottom: .5em;
+  animation: title 2s linear infinite;
+}
+
+.about__title:hover {
+  color: var(--color-blue);
+}
+
+.about__profile {
+  max-width: 300px;
+  border-radius: 20px;
+}
+
+.about__text {
+  list-style: url('../../../public/icons/developer-icon.svg');
+  font-family: var(--font-body);
+}
+
+.about__sub-title {
+  font-family: var(--font-title);
+  color: var(--color-gray)
+}
+
+.list__item {
+  display: flex;
+  align-items: center;
+  gap: .5em;
+}
+
+.about__contact {
+  margin: 2em 0;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.contact__link {
+  width: 3em;
+}
+
+.contact__link:hover {
+  cursor: pointer;
+  opacity: .8;
+}

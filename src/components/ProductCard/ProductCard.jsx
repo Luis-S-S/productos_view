@@ -26,7 +26,7 @@ function ProductCard({ product }) {
     if (minutes < 10) { minutes = `0${minutes}`; }
     let seconds = time % 60;
     if (seconds < 10) { seconds = `0${seconds}`; }
-    return `${minutes}:${seconds}`;
+    return `00:${minutes}:${seconds}`;
   };
 
   const timer = () => {
